@@ -1,0 +1,22 @@
+type TaskList @model {
+  id: ID!
+  title: String!
+  tasks: [Task]
+}
+
+type Task @model {
+  id: ID!
+  title: String!
+  complete: Boolean!
+}
+
+type Post @model {
+  title: String!
+  url: URL! @unique
+  comments: [Comment]
+}
+
+type Comment @model {
+  message: String!
+  post: Post
+}
